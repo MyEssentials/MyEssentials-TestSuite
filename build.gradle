@@ -30,9 +30,22 @@ repositories {
     }
 }
 
+apply plugin: "forge"
+
+sourceSets {
+    integrationTest {
+        java {
+            compileClasspath += main.output + test.output
+            runtimeClasspath += main.output + test.output
+            srcDir file('src/integration-test/java')
+        }
+        resources.srcDir file('src/integration-test/resources')
+    }
+}
+
+
 // Load Configs
 
-apply plugin: "forge"
 
 version = "0.00r"
 group = ""
