@@ -28,8 +28,6 @@ import org.junit.runners.BlockJUnit4ClassRunner;
 import org.junit.runners.model.InitializationError;
 import org.junit.runners.model.TestClass;
 
-import java.lang.reflect.Field;
-
 /**
  * JUnit Runner which runs tests inside the ClassLoader of the Minecraft Server.
  *
@@ -75,12 +73,12 @@ public class MinecraftRunner extends BlockJUnit4ClassRunner {
 
     @Override
     protected Object createTest() throws Exception {
-        Object object = super.createTest();
+        Object test = super.createTest();
         // TODO Later support @Inject, similar to https://github.com/eclipse/xtext/blob/master/plugins/org.eclipse.xtext.junit4/src/org/eclipse/xtext/junit4/XtextRunner.java
-        Field field = object.getClass().getField("server");
-        field.setAccessible(true);
-        field.set(object, starter.getGame());
-        return object;
+        test.getClass().getField("server").set(test, starter.getGame());
+        test.getClass().getField("LOG").set(test, starter.getLog());
+        test.getClass().getField("configFile").set(test, starter.getConfigFile());
+        return test;
     }
 
 }

@@ -16,7 +16,7 @@ public class MinecraftServerStarter {
 
     // This is intentionally an Object and not org.spongepowered.api.Game,
     // because that would lead to ClassCastException at this stage here.
-    private Object game;
+    private Object game, log, configFile;
     private LaunchClassLoader minecraftServerClassLoader;
 
     // https://github.com/michaeltamm/junit-toolbox
@@ -76,11 +76,29 @@ public class MinecraftServerStarter {
         Field gameField = testsRunnerPluginClassFromLaunchClassLoader.getDeclaredField("game");
         gameField.setAccessible(true);
         game = /* DO NOT (Game) */ gameField.get(null);
+
+        Field logField = testsRunnerPluginClassFromLaunchClassLoader.getDeclaredField("log");
+        logField.setAccessible(true);
+        log = logField.get(null);
+
+        Field configField = testsRunnerPluginClassFromLaunchClassLoader.getDeclaredField("configFile");
+        configField.setAccessible(true);
+        configFile  = configField.get(null);
     }
 
     public Object getGame() {
         checkIfStarted();
         return game;
+    }
+
+    public Object getLog() {
+        checkIfStarted();
+        return log;
+    }
+
+    public Object getConfigFile() {
+        checkIfStarted();
+        return configFile;
     }
 
     public ClassLoader getMinecraftServerClassLoader() {
