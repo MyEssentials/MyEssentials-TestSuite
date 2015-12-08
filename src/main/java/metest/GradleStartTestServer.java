@@ -13,8 +13,9 @@ public class GradleStartTestServer extends GradleStartCommon {
 
     @Override
     public void launch(String[] args) throws Throwable {
+        System.out.println(this.getClass().getClassLoader().getClass().getName());
         super.launch(args);
-    };
+    }
 
     @Override
     protected String getTweakClass() {
