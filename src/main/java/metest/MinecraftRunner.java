@@ -43,8 +43,6 @@ public class MinecraftRunner extends BlockJUnit4ClassRunner {
 
     // This is done like this just so that we can run stuff before invoking the parent constructor
     private static Class<?> trick(Class<?> testClass) throws InitializationError {
-        System.out.println("Now converting class: " + testClass.getName());
-        System.out.println(MinecraftRunner.class.getClassLoader().getClass().getName());
         try {
             if (!starter.isRunning()) {
                 starter.startServer();

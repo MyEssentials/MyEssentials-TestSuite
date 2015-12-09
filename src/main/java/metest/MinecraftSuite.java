@@ -20,7 +20,6 @@ public class MinecraftSuite extends Suite {
 
 
     private static Class<?> trick(Class<?> testClass) throws InitializationError {
-        System.out.println("Now converting class: " + testClass.getName());
         try {
             if (!starter.isRunning()) {
                 starter.startServer();
