@@ -47,7 +47,7 @@ sourceSets {
 // Load Configs
 
 
-version = "0.00r"
+version = "1.00r"
 group = ""
 archivesBaseName = "MyEssentials-TestSuite"
 
@@ -58,5 +58,12 @@ minecraft {
 
 // Setup Deps
 dependencies {
-    testCompile "junit:junit:4.11"
+    compile "junit:junit:4.11"
+    compile files("libs/ForgeGradle-1.2-SNAPSHOT.jar")
+}
+
+task printClasspath {
+    doLast {
+        println files().getAsPath()
+    }
 }
