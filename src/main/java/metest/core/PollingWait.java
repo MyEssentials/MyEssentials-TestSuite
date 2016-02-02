@@ -1,4 +1,4 @@
-package metest;
+package metest.core;
 
 import javax.annotation.Nonnull;
 import java.io.PrintWriter;

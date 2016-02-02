@@ -1,4 +1,4 @@
-package metest;
+package metest.api;
 
 import com.mojang.authlib.GameProfile;
 import net.minecraft.server.MinecraftServer;

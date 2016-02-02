@@ -1,4 +1,4 @@
-package metest;
+package metest.core;
 /**
  * Abstract base class to encapsulate assertions,
  * see {@link PollingWait} for usage example.

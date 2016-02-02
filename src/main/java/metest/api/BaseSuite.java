@@ -1,5 +1,6 @@
-package metest;
+package metest.api;
 
+import metest.core.MinecraftServerStarter;
 import org.junit.AfterClass;
 
 public class BaseSuite {

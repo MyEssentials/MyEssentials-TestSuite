@@ -1,4 +1,4 @@
-package metest;
+package metest.core;
 
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;

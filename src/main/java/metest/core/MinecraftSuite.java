@@ -1,5 +1,6 @@
-package metest;
+package metest.core;
 
+import metest.api.BaseSuite;
 import org.junit.runner.Runner;
 import org.junit.runners.Suite;
 import org.junit.runners.model.InitializationError;

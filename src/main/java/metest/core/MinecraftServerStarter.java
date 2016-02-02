@@ -1,4 +1,4 @@
-package metest;
+package metest.core;
 
 import net.minecraft.launchwrapper.Launch;
 import net.minecraft.launchwrapper.LaunchClassLoader;

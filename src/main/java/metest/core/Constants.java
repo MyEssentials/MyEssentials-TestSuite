@@ -1,4 +1,4 @@
-package metest;
+package metest.core;
 
 public class Constants {
 
