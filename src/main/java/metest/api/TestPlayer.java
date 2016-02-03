@@ -13,6 +13,8 @@ import java.util.UUID;
  */
 public class TestPlayer extends FakePlayer {
 
+    public String lastMessage = "";
+
     public TestPlayer(MinecraftServer server, String name) {
         super(server.worldServers[0], new GameProfile(UUID.randomUUID(), name));
     }
@@ -23,7 +25,7 @@ public class TestPlayer extends FakePlayer {
     }
 
     @Override
-    public void addChatMessage(IChatComponent p_145747_1_) {
-
+    public void addChatMessage(IChatComponent chatComponent) {
+        lastMessage = chatComponent.getUnformattedText();
     }
 }
