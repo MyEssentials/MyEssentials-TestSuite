@@ -1,6 +1,7 @@
 buildscript {
     repositories {
         mavenCentral()
+        jcenter()
         maven {
             name = "forge"
             url = "http://files.minecraftforge.net/maven"
@@ -11,7 +12,7 @@ buildscript {
         }
     }
     dependencies {
-        classpath 'net.minecraftforge.gradle:ForgeGradle:1.2-SNAPSHOT'
+        classpath group: 'net.minecraftforge.gradle', name: 'ForgeGradle', version: '3.+', changing: true
     }
 }
 
@@ -30,7 +31,8 @@ repositories {
     }
 }
 
-apply plugin: "forge"
+apply plugin: 'net.minecraftforge.gradle'
+apply plugin: 'idea'
 
 sourceSets {
     integrationTest {
@@ -52,12 +54,12 @@ group = ""
 archivesBaseName = "MyEssentials-TestSuite"
 
 minecraft {
-    version = "1.7.10-10.13.2.1291"
 }
 
 
 // Setup Deps
 dependencies {
+    minecraft 'net.minecraftforge:forge:1.14.4-28.1.0'
     compile "junit:junit:4.11"
     compile files("libs/ForgeGradle-1.2-SNAPSHOT.jar")
 }
